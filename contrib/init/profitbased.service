@@ -1,0 +1,26 @@
+[Unit]
+Description=Profitbase's distributed currency daemon
+After=network.target
+
+[Service]
+User=profitbase
+Group=profitbase
+
+Type=forking
+PIDFile=/var/lib/profitbased/profitbased.pid
+
+ExecStart=/usr/bin/profitbased -daemon -pid=/var/lib/profitbased/profitbased.pid \
+          -conf=/etc/profitbase/profitbase.conf -datadir=/var/lib/profitbased
+
+ExecStop=-/usr/bin/profitbase-cli -conf=/etc/profitbase/profitbase.conf \
+         -datadir=/var/lib/profitbased stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

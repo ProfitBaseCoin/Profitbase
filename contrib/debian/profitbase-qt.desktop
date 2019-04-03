@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Profitbase
+Comment=Profitbase P2P Cryptocurrency
+Comment[fr]=Profitbase, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Profitbase, eşten eşe kriptografik sanal para birimi
+Exec=profitbase-qt %u
+Terminal=false
+Type=Application
+Icon=profitbase128
+MimeType=x-scheme-handler/profitbase;
+Categories=Office;Finance;

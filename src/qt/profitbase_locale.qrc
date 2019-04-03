@@ -1,0 +1,36 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/profitbase_bg.qm</file>
+        <file alias="ca">locale/profitbase_ca.qm</file>
+        <file alias="cs">locale/profitbase_cs.qm</file>
+        <file alias="da">locale/profitbase_da.qm</file>
+        <file alias="de">locale/profitbase_de.qm</file>
+        <file alias="en">locale/profitbase_en.qm</file>
+        <file alias="en_US">locale/profitbase_en_US.qm</file>
+        <file alias="eo">locale/profitbase_eo.qm</file>
+        <file alias="es">locale/profitbase_es.qm</file>
+        <file alias="es_ES">locale/profitbase_es_ES.qm</file>
+        <file alias="fi">locale/profitbase_fi.qm</file>
+        <file alias="fr_FR">locale/profitbase_fr_FR.qm</file>
+        <file alias="hi_IN">locale/profitbase_hi_IN.qm</file>
+        <file alias="hr">locale/profitbase_hr.qm</file>
+        <file alias="hr_HR">locale/profitbase_hr_HR.qm</file>
+        <file alias="it">locale/profitbase_it.qm</file>
+        <file alias="ja">locale/profitbase_ja.qm</file>
+        <file alias="ko_KR">locale/profitbase_ko_KR.qm</file>
+        <file alias="lt_LT">locale/profitbase_lt_LT.qm</file>
+        <file alias="nl">locale/profitbase_nl.qm</file>
+        <file alias="pl">locale/profitbase_pl.qm</file>
+        <file alias="pt">locale/profitbase_pt.qm</file>
+        <file alias="pt_BR">locale/profitbase_pt_BR.qm</file>
+        <file alias="ro_RO">locale/profitbase_ro_RO.qm</file>
+        <file alias="ru">locale/profitbase_ru.qm</file>
+        <file alias="sk">locale/profitbase_sk.qm</file>
+        <file alias="sv">locale/profitbase_sv.qm</file>
+        <file alias="tr">locale/profitbase_tr.qm</file>
+        <file alias="uk">locale/profitbase_uk.qm</file>
+        <file alias="vi">locale/profitbase_vi.qm</file>
+        <file alias="zh_CN">locale/profitbase_zh_CN.qm</file>
+        <file alias="zh_TW">locale/profitbase_zh_TW.qm</file>
+    </qresource>
+</RCC>
