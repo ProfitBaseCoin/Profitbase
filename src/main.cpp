@@ -2009,8 +2009,14 @@ int64_t GetBlockValue(int nHeight)
 	else if (nHeight <= 300000 && nHeight > 290000) {
 		nSubsidy = 6 * COIN;
 	}
-	else {
+	else if (nHeight <= 2446208 && nHeight > 300000) {
 		nSubsidy = 5.9 * COIN;
+	}
+	else if (nHeight == 2446209) {
+		nSubsidy = 2.8 * COIN;
+	}		
+	else {
+		nSubsidy = 0 * COIN;
 	}
 	return nSubsidy;
 }
@@ -4014,37 +4020,6 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 			if (block.vtx[i].IsCoinStake())
 				return state.DoS(100, error("CheckBlock() : more than one coinstake"));
 	}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    if (!IsInitialBlockDownload() &&
-        masternodeSync.IsSynced()) {
-
-        // extract collateral info from masternode list
-        CMasternode* pmn = mnodeman.Find(block.vtx[1].vout[2].scriptPubKey);
-        CTxDestination mnaddress;
-        if (!ExtractDestination(block.vtx[1].vout[2].scriptPubKey, mnaddress))
-                {
-            return state.DoS(100, error("CheckBlock() : unknown masternode type/address"));
-                }
-        CBitcoinAddress mnpayee(mnaddress);
-
-        if (!pmn) {
-            return state.DoS(100, error("CheckBlock() : unknown masternode has claimed output in this block (block: %d, payee %s)\n", chainActive.Height()+1, mnpayee.ToString()));
-        } else {
-            // extract details from the masternode
-            uint256 nCollateralHash = pmn->vin.prevout.hash;
-            int nCollateralOut = pmn->vin.prevout.n;
-            // retrieve collateral transaction from disk
-            uint256 blockHash;
-            CTransaction nCollateralTx;
-            if (!GetTransaction(nCollateralHash, nCollateralTx, blockHash, true))
-                return state.DoS(100, error("CheckBlock() : could not find collateral transaction for this masternode\n"));
-            //else
-            //    LogPrintf("Found masternode collateral (blockhash: %s txhash: %s vout: %d)\n",
-            //              blockHash.ToString().c_str(), nCollateralTx.GetHash().ToString().c_str(), nCollateralOut);
-        }
-    }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	// ----------- swiftTX transaction scanning -----------
 	if (IsSporkActive(SPORK_3_SWIFTTX_BLOCK_FILTERING)) {
